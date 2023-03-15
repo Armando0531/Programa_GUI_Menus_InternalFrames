@@ -9,6 +9,7 @@ class VentanaInicio extends JFrame{
 	JMenu masters,booking,testPerform,printing,transaction,labReports,settings,utilities,window,help;
 	JMenuItem menuItemReg;
 	JInternalFrame record;
+	JToolBar tools;
 
 	public VentanaInicio() {
 
@@ -57,14 +58,24 @@ class VentanaInicio extends JFrame{
 		record.setDefaultCloseOperation(HIDE_ON_CLOSE);
 		record.setSize(1080, 630);
 		record.setTitle("Record");
+		
 
+		tools = new JToolBar(JToolBar.HORIZONTAL);
+		tools.setBounds(0,0,1080,64);
 
+		record.add(tools);
 		dp.add(record);
 		dp.setBounds(0, 0, 1080, 630);
 
 		add(dp);
 
 	}
+
+	public void metodoMagico(Component c,JPanel p,int x, int y,int width, int height) {
+		c.setBounds(x, y, width, height);
+		p.add(c);
+	}
+
 
 }
 public class PruebaInternalframes {
