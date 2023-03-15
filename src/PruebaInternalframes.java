@@ -15,7 +15,7 @@ class VentanaInicio extends JFrame{
 
 		getContentPane().setLayout(null);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
-		setSize(1080,630);
+		setSize(1095,680);
 		setLocationRelativeTo(null);
 		setTitle("InternalFrames");
 		setVisible(true);
@@ -56,16 +56,45 @@ class VentanaInicio extends JFrame{
 		record = new JInternalFrame();
 		record.getContentPane().setLayout(null);
 		record.setDefaultCloseOperation(HIDE_ON_CLOSE);
-		record.setSize(1080, 630);
+		record.setSize(1080, 616);
 		record.setTitle("Record");
 		
 
 		tools = new JToolBar(JToolBar.HORIZONTAL);
 		tools.setBounds(0,0,1080,64);
+		
+		JButton add = new JButton(new ImageIcon("Icons/Add.png"));
+		JButton edit = new JButton(new ImageIcon("Icons/Edit.png"));
+		JButton back = new JButton(new ImageIcon("Icons/Back.png"));
+		JButton list = new JButton(new ImageIcon("Icons/List.png"));
+		JButton print = new JButton(new ImageIcon("Icons/Print.png"));
+		JButton test = new JButton(new ImageIcon("Icons/Test.png"));
+		JButton cancel = new JButton(new ImageIcon("Icons/Cancel.png"));
+		JButton settings = new JButton(new ImageIcon("Icons/Settings.png"));
+		JButton delete = new JButton(new ImageIcon("Icons/Delete.png"));
+		JButton slip = new JButton(new ImageIcon("Icons/Slip.png"));
+		JButton exit = new JButton(new ImageIcon("Icons/Exit.png"));
+
+		tools.add(add);
+		tools.add(edit);
+		tools.add(back);
+		tools.add(list);
+		tools.add(print);
+		tools.add(test);
+		tools.add(cancel);
+		tools.add(settings);
+		tools.add(delete);
+		tools.add(slip);
+		tools.add(exit);
 
 		record.add(tools);
 		dp.add(record);
-		dp.setBounds(0, 0, 1080, 630);
+		
+		JPanel panel1 = new JPanel();
+		panel1.setBackground(Color.WHITE);
+
+		dp.add(record);
+		dp.setBounds(0, 0, 1080, 616);
 
 		add(dp);
 
