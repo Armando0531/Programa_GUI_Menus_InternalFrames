@@ -13,6 +13,7 @@ class VentanaInicio extends JFrame{
 	JToolBar tools;
 	JButton calc1,calc2,calc3;
 	JTextField patientId,hh,mm,labNo,name,age,mons,days,referredBy,blank,sampleBy,panelCode,panelId,email;
+	JComboBox cName,cSex,cDate;
 
 	public VentanaInicio() {
 
@@ -141,7 +142,7 @@ class VentanaInicio extends JFrame{
 		days=new JTextField("0");
 		metodoMagico(days, panel1, 285, 54, 25, 18);
 		referredBy=new JTextField();
-		metodoMagico(referredBy, panel1, 78, 77, 76, 18);
+		metodoMagico(referredBy, panel1, 78, 83, 76, 18);
 		blank=new JTextField();
 		metodoMagico(blank, panel1, 177, 79, 130, 20);
 		sampleBy=new JTextField();
@@ -153,7 +154,17 @@ class VentanaInicio extends JFrame{
 		email=new JTextField();
 		metodoMagico(email, panel1, 390, 132, 88, 20);
 
+		String dateOpc[]= {"2/01/2012"};
+		String nameOpc[]= {"MR.","MRS."};
+		String sexOpc[]= {"MALE","FEMALE","OTHER"};
 
+		cDate=new JComboBox(dateOpc);
+		metodoMagico(cDate, panel1, 247, 5, 81, 18);
+		cName=new JComboBox(nameOpc);
+		metodoMagico(cName, panel1, 77, 30, 48, 18);
+		cSex=new JComboBox(sexOpc);
+		metodoMagico(cSex, panel1, 77, 56, 48, 18);
+		
 		record.add(panel1);
 		
 		dp.add(record);
