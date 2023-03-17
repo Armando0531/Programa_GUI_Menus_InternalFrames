@@ -14,14 +14,15 @@ class VentanaInicio extends JFrame{
 	JInternalFrame record;
 	JToolBar tools;
 	JButton calc1,calc2,calc3;
-	JTextField patientId,hh,mm,labNo,name,age,mons,days,referredBy,blank,sampleBy,panelCode,panelId,email,totalLess,lestAmt,concession,homeColection,taxAmt,netAmt,balance;
-	JComboBox cName,cSex,cDate;
+	JTextField patientId,hh,mm,labNo,name,age,mons,days,referredBy,blank,sampleBy,
+	panelCode,panelId,email,totalLess,lestAmt,concession,homeColection,taxAmt,netAmt,balance,hc,pd,rn,functions;
+	JComboBox cName,cSex,cDate,cPayType;
 
 	public VentanaInicio() {
 
 		getContentPane().setLayout(null);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
-		setSize(1095,680);
+		setSize(1095,700);
 		setLocationRelativeTo(null);
 		setTitle("InternalFrames");
 		setVisible(true);
@@ -62,7 +63,7 @@ class VentanaInicio extends JFrame{
 		record = new JInternalFrame();
 		record.getContentPane().setLayout(null);
 		record.setDefaultCloseOperation(HIDE_ON_CLOSE);
-		record.setSize(1080, 616);
+		record.setSize(1080, 636);
 		record.setTitle("Record");
 		
 		//ToolBar start
@@ -224,6 +225,33 @@ class VentanaInicio extends JFrame{
 		metodoMagico(balance,panel3, 135, 147, 66, 14);
 
 		record.add(panel3);
+		
+		JPanel panel4 = new JPanel();
+		panel4.setBackground(Color.WHITE);
+		panel4.setLayout(null);
+		panel4.setBounds(1, 508, 1064, 96);
+
+		metodoMagico(new JLabel("Home Collection"),panel4,8,11,100,15);
+		metodoMagico(new JLabel("Paid"),panel4,160,11,100,15);
+		metodoMagico(new JLabel("Pay Type"),panel4,264,11,100,15);
+		metodoMagico(new JLabel("Receipt No."),panel4,400,11,100,15);
+
+		hc=new JTextField("0");
+		metodoMagico(hc,panel4,106, 11, 43, 18);
+		pd=new JTextField("0");
+		metodoMagico(pd,panel4,202, 11, 43, 18);
+		pd=new JTextField("0");
+		metodoMagico(pd,panel4,475, 11, 94, 18);
+
+		String opcPayType[]= {"CASH","CARD"};
+		cPayType= new JComboBox(opcPayType);
+		metodoMagico(cPayType, panel4,324, 11, 62, 18);
+
+		functions=new JTextField();
+		functions.setBackground(Color.BLUE);
+		metodoMagico(functions, panel4, 1, 51, 1063, 45);
+
+		record.add(panel4);
 		
 		dp.add(record);
 		dp.setBounds(0, 0, 1080, 680);
